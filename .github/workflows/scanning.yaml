@@ -18,3 +18,11 @@ jobs:
         with:
           target-url: 'https://ginandjuice.shop'
 
+      - name: Publish Dastardly Scan Report
+        if: always()
+        uses: mikepenz/action-junit-report@v4
+        with:
+          check_name: 'Dastardly Scan Report'
+          report_paths: '**/dastardly-report.xml'
+          require_tests: true
+
